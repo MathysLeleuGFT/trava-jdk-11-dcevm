@@ -1,17 +1,17 @@
 language: cpp
-env: SOURCE_JDK_TAG=dcevm-11.0.5+5
+env: SOURCE_JDK_TAG=dcevm-11.0.6+10
 matrix:
   include:
-  - os: osx
-    env: OS_BUILD=osx
-  - os: linux
-    env: OS_BUILD=linux
-    dist: xenial
-    sudo: required
-    before_install:
-    - sudo apt-get install -y libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
-      libcups2-dev libasound2 libxrandr-dev
-    - sudo ln -s /usr/lib/x86_64-linux-gnu/libasound.so.2 /usr/lib/x86_64-linux-gnu/libasound.so
+#  - os: osx
+#    env: OS_BUILD=osx
+#  - os: linux
+#    env: OS_BUILD=linux
+#    dist: xenial
+#    sudo: required
+#    before_install:
+#    - sudo apt-get install -y libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+#      libcups2-dev libasound2 libxrandr-dev
+#    - sudo ln -s /usr/lib/x86_64-linux-gnu/libasound.so.2 /usr/lib/x86_64-linux-gnu/libasound.so
   - os: windows
     env: OS_BUILD=windows
     before_install:
@@ -53,6 +53,6 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    repo: TravaOpenJDK/trava-jdk-11-dcevm
+    repo: MathysLeleuGFT/trava-jdk-11-dcevm
     all_branches: true
     tags: true
