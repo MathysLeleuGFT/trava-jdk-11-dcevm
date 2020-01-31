@@ -1,6 +1,6 @@
 export PATH=/cygdrive/c/tools/cygwin/bin:$PATH
 
-wget -q -O OpenJDK11_x64_Windows.zip "https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?os=windows&release=jdk-11.0.6%2B10&arch=x64&type=jdk"
+wget -q -O OpenJDK11_x64_Windows.zip "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jdk_x64_windows_hotspot_11.0.6_10.zip"
 JDK_BOOT_DIR=$PWD/$(unzip -Z1 OpenJDK11_x64_Windows.zip | grep 'bin/javac'  | tr '/' '\n' | tail -3 | head -1)
 unzip -q OpenJDK11_x64_Windows.zip
 
