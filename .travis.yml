@@ -32,7 +32,7 @@ script:
       wget -q -O - "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz" | tar xpzf - --strip-components=1 -C ${JDK_BOOT_DIR};
     fi
   - if [[ $OS_BUILD == "osx" ]]; then
-      wget -q -O - 'https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz' | tar xpzf - --strip-components=2 -C ${JDK_BOOT_DIR};
+      wget -q -O - 'https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jdk_x64_mac_hotspot_11.0.6_10.tar.gz' | tar xpzf - --strip-components=2 -C ${JDK_BOOT_DIR};
       export JDK_BOOT_DIR=${JDK_BOOT_DIR}/Home;
       export JAVA_HOME="${JDK_BOOT_DIR}";
     fi
