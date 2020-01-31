@@ -2,16 +2,16 @@ language: cpp
 env: SOURCE_JDK_TAG=dcevm-11.0.6+10
 matrix:
   include:
-#  - os: osx
-#    env: OS_BUILD=osx
-#  - os: linux
-#    env: OS_BUILD=linux
-#    dist: xenial
-#    sudo: required
-#    before_install:
-#    - sudo apt-get install -y libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
-#      libcups2-dev libasound2 libxrandr-dev
-#    - sudo ln -s /usr/lib/x86_64-linux-gnu/libasound.so.2 /usr/lib/x86_64-linux-gnu/libasound.so
+  - os: osx
+    env: OS_BUILD=osx
+  - os: linux
+    env: OS_BUILD=linux
+    dist: xenial
+    sudo: required
+    before_install:
+    - sudo apt-get install -y libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+      libcups2-dev libasound2 libxrandr-dev
+    - sudo ln -s /usr/lib/x86_64-linux-gnu/libasound.so.2 /usr/lib/x86_64-linux-gnu/libasound.so
   - os: windows
     env: OS_BUILD=windows
     before_install:
@@ -29,10 +29,10 @@ script:
   - export HSWAP_AGENT_DOWNLOAD_URL=https://github.com/HotswapProjects/HotswapAgent/releases/download/RELEASE-1.4.0/hotswap-agent-1.4.0.jar
   - mkdir -p "$JDK_BOOT_DIR"
   - if [[ $OS_BUILD == "linux" ]]; then
-      wget -q -O - "https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?os=linux&release=jdk-11.0.3%2B7&type=jdk&arch=x64" | tar xpzf - --strip-components=1 -C ${JDK_BOOT_DIR};
+      wget -q -O - "https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?os=linux&release=jdk-11.0.6%2B10&type=jdk&arch=x64" | tar xpzf - --strip-components=1 -C ${JDK_BOOT_DIR};
     fi
   - if [[ $OS_BUILD == "osx" ]]; then
-      wget -q -O - 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?os=mac&release=jdk-11.0.3%2B7&type=jdk' | tar xpzf - --strip-components=2 -C ${JDK_BOOT_DIR};
+      wget -q -O - 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?os=mac&release=jdk-11.0.6%2B10&type=jdk' | tar xpzf - --strip-components=2 -C ${JDK_BOOT_DIR};
       export JDK_BOOT_DIR=${JDK_BOOT_DIR}/Home;
       export JAVA_HOME="${JDK_BOOT_DIR}";
     fi
