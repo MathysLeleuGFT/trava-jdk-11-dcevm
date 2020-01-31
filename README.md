@@ -1,8 +1,8 @@
 Trava dcevm-11
 ==============
 <p align="left">
-    <a href="https://travis-ci.org/TravaOpenJDK/trava-jdk-11-dcevm">
-        <img src="https://api.travis-ci.org/TravaOpenJDK/trava-jdk-11-dcevm.svg" alt="Build Status">
+    <a href="https://travis-ci.org/MathysLeleuGFT/trava-jdk-11-dcevm">
+        <img src="https://api.travis-ci.org/MathysLeleuGFT/trava-jdk-11-dcevm.svg" alt="Build Status">
     </a>
     <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
         <img src="http://img.shields.io/:license-apache-blue.svg" alt="License">
